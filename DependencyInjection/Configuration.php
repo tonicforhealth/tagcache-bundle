@@ -29,6 +29,7 @@ class Configuration implements ConfigurationInterface
                         ->booleanNode('enable_largeobject')->defaultValue(false)->end()
                         ->booleanNode('hashkey')->defaultValue(false)->end()
                         ->scalarNode('cache_dir')->defaultValue('%kernel.cache_dir%'.DIRECTORY_SEPARATOR.'RickySu.TagcacheBundle')->end()
+                        ->scalarNode('redis_connection_class')->defaultValue(\Redis::class)->end()
                         ->arrayNode('servers')
                             ->useAttributeAsKey('servers')->prototype('scalar')->end()
                         ->end()
